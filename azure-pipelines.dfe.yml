@@ -2,7 +2,7 @@ variables:
   BuildConfiguration: 'Release'
   CI: true
   PNPM_VERSION: 7.26.0
-  NODE_VERSION: 18.12.1
+  NODE_VERSION: 18.16.0
   DOTNET_VERSION: 6.0.x
 
 trigger:
