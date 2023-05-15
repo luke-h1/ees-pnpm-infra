@@ -1,14 +1,14 @@
 {
   "name": "explore-education-statistics",
   "private": true,
-  "packageManager": "pnpm@8.1.1",
+  "packageManager": "pnpm@8.5.1",
   "dependencies": {
     "husky": "^7.0.4",
     "lint-staged": "^10.4.0"
   },
   "engines": {
-    "node": "16.14.2",
-    "pnpm": "8.1.1"
+    "node": "18.16.0",
+    "pnpm": "8.5.1"
   },
   "devDependencies": {
     "@types/jest": "^26.0.14",
