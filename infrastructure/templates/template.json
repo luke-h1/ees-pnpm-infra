@@ -9,13 +9,6 @@
     }
   },
   "parameters": {
-    "repoUrl": {
-      "type": "string",
-      "defaultValue": "https://github.com/luke-h1/explore-education-statistics",
-      "metadata": {
-        "description": "The URL of the repository that contains the source code."
-      }
-    },
     "publicAppBasicAuthUsername": {
       "type": "string",
       "metadata": {
@@ -141,20 +134,7 @@
         "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanPortalName'))]"
       ]
     },
-    {
-      "condition": "[contains(parameters('repoUrl'), 'http')]",
-      "type": "Microsoft.Web/sites/sourcecontrols",
-      "apiVersion": "2021-02-01",
-      "name": "[format('{0}/{1}', parameters('webAppName'), 'web')]",
-      "properties": {
-        "repoUrl": "[parameters('repoUrl')]",
-        "branch": "EES-3976-migrate-to-PNPM",
-        "isManualIntegration": true
-      },
-      "dependsOn": [
-        "[resourceId('Microsoft.Web/sites', parameters('webAppName'))]"
-      ]
-    },
+
     {
       "name": "[concat(parameters('webAppName'), '/appsettings')]",
       "type": "Microsoft.Web/sites/config",
