@@ -119,7 +119,7 @@
           "alwaysOn": true,
           "minTlsVersion": "1.2",
           "ftpsState": "FtpsOnly",
-          "nodeVersion": "18-lts",
+          "nodeVersion": "16-lts",
           "WEBSITES_PORT": 3000,
           "DOCKER_REGISTRY_SERVER_URL": "[parameters('DOCKER_REGISTER_SERVER_URL')]",
           "DOCKER_REGISTRY_SERVER_USERNAME": "[parameters('DOCKER_REGISTRY_SERVER_USERNAME')]",
