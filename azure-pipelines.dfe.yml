@@ -4,6 +4,7 @@ variables:
   NODE_VERSION: 16.14.2
   DOTNET_VERSION: 6.0.x
 
+
 trigger:
 - main
 
@@ -48,18 +49,13 @@ jobs:
           workingDir: '.'
           targetType: 'inline'
           script: 'pnpm clean && rm -rf src/explore-education-statistics-admin && rm -rf tests && rm -rf src/explore-education-statistics-ckeditor && rm -rf src/GovUk.* && ls -lha src/'
-
-      - task: 'ArchiveFiles@2'
-        displayName: 'Archive files'
+        
+      
+      - task: Docker@2
+        condition: ne(variables['Build.Reason'], 'PullRequest'))
         inputs:
-          rootFolderOrFile: '.'
-          includeRootFolder: false
-          archiveType: 'zip'
-          archiveFile: '$(Build.ArtifactStagingDirectory)/public-frontend.zip'
-          replaceExistingArchive: true
-
-      - task: 'PublishPipelineArtifact@0'
-        displayName: 'Publish Pipeline Artifact'
-        inputs:
-          artifactName: 'public-frontend'
-          targetPath: '$(Build.ArtifactStagingDirectory)'
+          containerRegistry: 'eesdev2'
+          repository: 'eesfrontendcontainer'
+          command: 'buildAndPush'
+          Dockerfile: '**/Dockerfile'
+          tags: $(Build.BuildNumber)
