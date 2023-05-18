@@ -49,5 +49,5 @@ jobs:
           containerRegistry: 'eesdev2'
           repository: 'eesfrontendccontainer'
           command: 'build'
-          buildContext: "."
-          Dockerfile: '**/Dockerfile.public-frontend'
+          buildContext: "**"
+          Dockerfile: 'docker/Dockerfile.public-frontend'
