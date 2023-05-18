@@ -166,6 +166,7 @@ const FindStatisticsPage: NextPage = () => {
         <div>
           <pre>
             <code>{JSON.stringify(router.query, null, 2)}</code>
+            <code>testing</code>
           </pre>
         </div>
         <div className="govuk-grid-column-two-thirds">
