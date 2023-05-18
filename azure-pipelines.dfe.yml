@@ -45,10 +45,10 @@ jobs:
       #     Dockerfile: '/docker/**'
       #     buildContext: '/docker/**'
 
-- task: Docker@2
-  inputs:
-    containerRegistry: 'eesdev2'
-    repository: 'eesfrontendcontainer'
-    command: 'buildAndPush'
-    Dockerfile: 'docker/Dockerfile.public-frontend'
-    buildContext: '**/docker'
+      - task: Docker@2
+        inputs:
+          containerRegistry: 'eesdev2'
+          repository: 'eesfrontendcontainer'
+          command: 'buildAndPush'
+          Dockerfile: 'docker/Dockerfile.public-frontend'
+          buildContext: '**/docker'
