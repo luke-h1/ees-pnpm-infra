@@ -51,6 +51,5 @@ jobs:
           containerRegistry: 'eesdev2'
           repository: 'eesfrontendccontainer'
           command: 'build'
-          Dockerfile: docker/Dockerfile.public-frontend
-          buildContext: "../"
-          
+          Dockerfile: 'docker/Dockerfile.public-frontend'
+          buildContext: '$(System.DefaultWorkingDirectory)'
