@@ -44,7 +44,6 @@ jobs:
           repository: 'eesfrontendcontainer'
           command: 'build'
           Dockerfile: 'docker/Dockerfile.public-frontend'
-          buildContext: 'docker/Dockerfile.public-frontend'
 
       - task: Docker@2
         displayName: "push public frontend docker image"
