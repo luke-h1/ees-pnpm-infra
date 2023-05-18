@@ -17,6 +17,8 @@ jobs:
       vmImage: 'ubuntu-20.04'
       demands: azureps
     steps:
+      - checkout: self
+
       - task: NodeTool@0
         displayName: 'Install Node.js $(NODE_VERSION)'
         inputs:
@@ -49,5 +51,5 @@ jobs:
           containerRegistry: 'eesdev2'
           repository: 'eesfrontendccontainer'
           command: 'build'
-          buildContext: "**"
-          Dockerfile: 'docker/Dockerfile.public-frontend'
+          Dockerfile: docker/Dockerfile.public-frontend
+          buildContext: $(Build.Repository.LocalPath)
