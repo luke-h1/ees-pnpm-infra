@@ -163,6 +163,11 @@ const FindStatisticsPage: NextPage = () => {
       }
     >
       <div className="govuk-grid-row">
+        <div>
+          <pre>
+            <code>{JSON.stringify(router.query, null, 2)}</code>
+          </pre>
+        </div>
         <div className="govuk-grid-column-two-thirds">
           <p className="govuk-body-l">
             Search and browse statistical summaries and download associated data
