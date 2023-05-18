@@ -56,7 +56,6 @@ jobs:
           command: 'build'
           Dockerfile: 'docker/Dockerfile.public-frontend'
           arguments: '-f docker/Dockerfile.public-frontend'
-          tags: '${Build.BuildNumber}'
 
       - task: Docker@2
         displayName: "push public frontend docker image"
