@@ -4,9 +4,16 @@ variables:
   NODE_VERSION: 16.14.2
   DOTNET_VERSION: 6.0.x
 
-
 trigger:
-- main
+  branches:
+    include:
+      - main
+      - dev
+  paths:
+    exclude:
+    - infrastructure/
+pr: [ 'main', 'dev' ]
+
 
 pool:
   vmImage: ubuntu-latest
