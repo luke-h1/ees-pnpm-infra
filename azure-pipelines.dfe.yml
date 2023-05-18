@@ -50,5 +50,6 @@ jobs:
           containerRegistry: 'eesdev2'
           repository: 'eesfrontendcontainer'
           command: 'buildAndPush'
+          arguments: '-f $(Build.SourcesDirectory)/docker/Dockerfile.public-frontend $(Build.SourcesDirectory)'
           Dockerfile: '$(Build.SourcesDirectory)/docker/Dockerfile.public-frontend'
           buildContext: '$(Build.SourcesDirectory)'
