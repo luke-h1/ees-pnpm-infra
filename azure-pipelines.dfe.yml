@@ -36,25 +36,35 @@ jobs:
           targetType: 'inline'
           script: 'pnpm i'
 
-      - task: 'Bash@3'
-        displayName: 'echo "done'
-        inputs:
-          workingDir: '.'
-          targetType: 'inline'
-          script: 'echo "done"'
 
-      - task: 'Bash@3'
-        displayName: 'Purge'
-        inputs:
-          workingDir: '.'
-          targetType: 'inline'
-          script: 'pnpm clean && rm -rf src/explore-education-statistics-admin && rm -rf tests && rm -rf src/explore-education-statistics-ckeditor && rm -rf src/GovUk.* && ls -lha src/'
-
+      # - task: Docker@2
+      #   condition: ne(variables['Build.Reason'], 'PullRequest')
+      #   inputs:
+      #     containerRegistry: 'eesdev2'
+      #     repository: 'eesfrontendcontainer'
+      #     command: 'buildAndPush'
+      #     Dockerfile: 'docker/Dockerfile.public-frontend'
+      #     tags: $(Build.BuildNumber)
+      #     arguments: '-f docker/Dockerfile.public-frontend'
+      #     buildContext: 
       - task: Docker@2
+        displayName: "build public frontend docker image"
         condition: ne(variables['Build.Reason'], 'PullRequest')
         inputs:
           containerRegistry: 'eesdev2'
           repository: 'eesfrontendcontainer'
-          command: 'buildAndPush'
+          command: 'build'
           Dockerfile: 'docker/Dockerfile.public-frontend'
-          tags: $(Build.BuildNumber)
+          arguments: '-f docker/Dockerfile.public-frontend'
+          tags: '${Build.BuildNumber}'
+
+      - task: Docker@2
+        displayName: "push public frontend docker image"
+        condition: ne(variables['Build.Reason'], 'PullRequest')
+        inputs:
+          containerRegistry: 'eesdev2'
+          repository: 'eesfrontendcontainer'
+          command: 'push'
+          tags: '${Build.BuildNumber}'
+
+
