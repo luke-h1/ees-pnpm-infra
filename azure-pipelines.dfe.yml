@@ -56,5 +56,5 @@ jobs:
           containerRegistry: 'eesdev2'
           repository: 'eesfrontendcontainer'
           command: 'buildAndPush'
-          Dockerfile: '**/Dockerfile'
+          Dockerfile: 'docker/Dockerfile.public-frontend'
           tags: $(Build.BuildNumber)
