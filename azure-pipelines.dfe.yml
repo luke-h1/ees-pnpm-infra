@@ -41,4 +41,4 @@ jobs:
           containerRegistry: 'eesdev2'
           repository: 'eesfrontendcontainer'
           command: 'buildAndPush'
-          Dockerfile: '**/docker/Dockerfile.public-frontend'
+          Dockerfile: 'docker/Dockerfile.public-frontend'
