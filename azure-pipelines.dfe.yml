@@ -42,3 +42,4 @@ jobs:
           repository: 'eesfrontendcontainer'
           command: 'buildAndPush'
           Dockerfile: 'docker/Dockerfile.public-frontend'
+          buildContext: "."
