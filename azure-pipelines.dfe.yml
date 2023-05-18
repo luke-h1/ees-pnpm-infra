@@ -36,20 +36,9 @@ jobs:
           targetType: 'inline'
           script: 'pnpm i'
 
-      # - task: Docker@2
-      #   condition: ne(variables['Build.Reason'], 'PullRequest')
-      #   inputs:
-      #     containerRegistry: 'eesdev2'
-      #     repository: 'eesfrontendcontainer'
-      #     command: 'buildAndPush'
-      #     Dockerfile: '/docker/**'
-      #     buildContext: '/docker/**'
-
       - task: Docker@2
         inputs:
           containerRegistry: 'eesdev2'
           repository: 'eesfrontendcontainer'
           command: 'buildAndPush'
-          arguments: '-f $(Build.SourcesDirectory)/docker/Dockerfile.public-frontend $(Build.SourcesDirectory)'
-          Dockerfile: '$(Build.SourcesDirectory)/docker/Dockerfile.public-frontend'
-          buildContext: '$(Build.SourcesDirectory)'
+          Dockerfile: '**/docker/Dockerfile.public-frontend'
