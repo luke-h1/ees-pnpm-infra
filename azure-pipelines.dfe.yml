@@ -42,5 +42,5 @@ jobs:
           containerRegistry: 'eesdev2'
           repository: 'eesfrontendcontainer'
           command: 'buildAndPush'
-          Dockerfile: '**/docker/**'
-          buildContext: '**/docker/**'
+          Dockerfile: '/docker/**'
+          buildContext: '/docker/**'
