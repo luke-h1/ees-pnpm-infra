@@ -189,6 +189,7 @@ const FindStatisticsPage: NextPage = () => {
       </div>
       <div className="govuk-grid-row">
         <div className="govuk-grid-column-one-third">
+          <div>yo yo yo</div>
           <SearchForm
             searchTerm={search}
             onSubmit={nextValue =>
