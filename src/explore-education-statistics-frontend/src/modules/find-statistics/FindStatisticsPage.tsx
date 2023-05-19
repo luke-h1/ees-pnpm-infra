@@ -163,14 +163,8 @@ const FindStatisticsPage: NextPage = () => {
       }
     >
       <div className="govuk-grid-row">
-        <div>
-          NEW CODE CHANGES
-          <pre>
-            <code>{JSON.stringify(router.query, null, 2)}</code>
-          </pre>
-        </div>
         <div className="govuk-grid-column-two-thirds">
-          <p>yo yo yo yo - CODE CHANGE {Date.now().toString()}</p>
+          <p>another code change done at 10:30AM</p>
           <p className="govuk-body-l">
             Search and browse statistical summaries and download associated data
             to help you understand and analyse our range of statistics.
@@ -196,7 +190,6 @@ const FindStatisticsPage: NextPage = () => {
       </div>
       <div className="govuk-grid-row">
         <div className="govuk-grid-column-one-third">
-          <div>yo yo yo</div>
           <SearchForm
             searchTerm={search}
             onSubmit={nextValue =>
