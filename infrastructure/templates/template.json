@@ -73,13 +73,6 @@
         "description": "The password to log in to the Docker registry."
       }
     },
-    "DOCKER_IMAGE_NAME": {
-      "type": "string",
-      "defaultValue": "eesfrontendcontainer",
-      "metadata": {
-        "description": "The name of the Docker image."
-      }
-    },
     "registries_eesdev2_name": {
       "defaultValue": "eesdev2",
       "type": "string"
