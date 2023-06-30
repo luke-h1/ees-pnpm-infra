@@ -97,6 +97,40 @@
       }
     },
     {
+      "type": "Microsoft.ContainerRegistry/registries/tokens",
+      "apiVersion": "2023-01-01-preview",
+      "name": "eesacr-push-token",
+      "properties": {
+        "credentials": {
+          "passwords": [
+            {
+              "creationTime": "1688133729", // Fri Jun 30 2023 14:02:09 GMT+0000
+              "name": "push-token"
+            }
+          ]
+        },
+        "scopeMapId": "content/write",
+        "status": "enabled"
+      }
+    },
+    {
+      "type": "Microsoft.ContainerRegistry/registries/tokens",
+      "apiVersion": "2023-01-01-preview",
+      "name": "eesacr-pull-token",
+      "properties": {
+        "credentials": {
+          "passwords": [
+            {
+              "creationTime": "1688133729", // Fri Jun 30 2023 14:02:09 GMT+0000
+              "name": "pull-token"
+            }
+          ]
+        },
+        "scopeMapId": "content/read",
+        "status": "enabled"
+      }
+    },
+    {
       "type": "Microsoft.Web/sites",
       "apiVersion": "2021-02-01",
       "name": "[parameters('webAppName')]",
@@ -127,7 +161,6 @@
         "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanPortalName'))]"
       ]
     },
-
     {
       "name": "[concat(parameters('webAppName'), '/appsettings')]",
       "type": "Microsoft.Web/sites/config",
