@@ -219,51 +219,6 @@
         "zoneRedundancy": "Disabled",
         "anonymousPullEnabled": false
       }
-    },
-    {
-      "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
-      "apiVersion": "2022-02-01-preview",
-      "name": "[concat(parameters('eesAcrName'), '/_repositories_admin')]",
-      "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', parameters('eesAcrName'))]"
-      ],
-      "properties": {
-        "description": "Can perform all read, write and delete operations on the registry",
-        "actions": [
-          "repositories/*/metadata/read",
-          "repositories/*/metadata/write",
-          "repositories/*/content/read",
-          "repositories/*/content/write",
-          "repositories/*/content/delete"
-        ]
-      }
-    },
-    {
-      "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
-      "apiVersion": "2022-02-01-preview",
-      "name": "[concat(parameters('eesAcrName'), '/_repositories_pull')]",
-      "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', parameters('eesAcrName'))]"
-      ],
-      "properties": {
-        "description": "Can pull any repository of the registry",
-        "actions": ["repositories/*/content/read"]
-      }
-    },
-    {
-      "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
-      "apiVersion": "2022-02-01-preview",
-      "name": "[concat(parameters('eesAcrName'), '/_repositories_push')]",
-      "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', parameters('eesAcrName'))]"
-      ],
-      "properties": {
-        "description": "Can push to any repository of the registry",
-        "actions": [
-          "repositories/*/content/read",
-          "repositories/*/content/write"
-        ]
-      }
     }
   ]
 }
