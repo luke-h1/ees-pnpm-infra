@@ -140,7 +140,7 @@
             }
           ]
         },
-        "scopeMapId": "/subscriptions/xxxxxxxxxxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.ContainerRegistry/registries/myregistry/tokens/[resourceId('Microsoft.ContainerRegistry/registries', parameters('eesAcrName'))]",
+        "scopeMapId": "/subscriptions/xxxxxxxxxxxxxxxxxxxx/resourceGroups/dfe-development/providers/Microsoft.ContainerRegistry/registries/myregistry/tokens/[resourceId('Microsoft.ContainerRegistry/registries', parameters('eesAcrName'))]",
         "status": "enabled"
       }
     },
