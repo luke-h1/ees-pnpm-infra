@@ -97,6 +97,37 @@
       }
     },
     {
+      "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
+      "apiVersion": "2022-02-01-preview",
+      "name": "[concat(parameters('eesAcrName'), '/_repositories_push')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ContainerRegistry/registries', parameters('eesAcrName'))]"
+      ],
+      "properties": {
+        "description": "Scope map for pulling repositories",
+        "actions": [
+          "repositories/*/metadata/read",
+          "repositories/*/content/read"
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
+      "apiVersion": "2022-02-01-preview",
+      "name": "[concat(parameters('eesAcrName'), '/_repositories_push')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ContainerRegistry/registries', parameters('eesAcrName'))]"
+      ],
+      "properties": {
+        "description": "Scope map for pushing repositories",
+        "actions": [
+          "repositories/*/metadata/write",
+          "repositories/*/content/write",
+          "repositories/*/content/delete"
+        ]
+      }
+    },
+    {
       "type": "Microsoft.ContainerRegistry/registries/tokens",
       "apiVersion": "2023-01-01-preview",
       "name": "eesacr-push-token",
@@ -109,7 +140,7 @@
             }
           ]
         },
-        "scopeMapId": "content/write",
+        "scopeMapId": "/subscriptions/3caedb98-4e0e-41f5-9b4c-b4a85de385d1/resourceGroups/dfe-development/providers/Microsoft.ContainerRegistry/registries/myregistry/tokens/[resourceId('Microsoft.ContainerRegistry/registries', parameters('eesAcrName'))]",
         "status": "enabled"
       }
     },
@@ -253,9 +284,7 @@
       ],
       "properties": {
         "description": "Can pull any repository of the registry",
-        "actions": [
-          "repositories/*/content/read"
-        ]
+        "actions": ["repositories/*/content/read"]
       }
     },
     {
