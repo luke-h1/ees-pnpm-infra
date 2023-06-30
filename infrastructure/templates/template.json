@@ -109,7 +109,7 @@
             }
           ]
         },
-        "scopeMapId": "_repositories_push",
+        "scopeMapId": "content/write",
         "status": "enabled"
       }
     },
@@ -126,7 +126,7 @@
             }
           ]
         },
-        "scopeMapId": "_repositories_pull",
+        "scopeMapId": "content/read",
         "status": "enabled"
       }
     },
