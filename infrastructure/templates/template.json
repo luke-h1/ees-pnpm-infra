@@ -73,7 +73,7 @@
         "description": "The password to log in to the Docker registry."
       }
     },
-    "registries_eesdev2_name": {
+    "eesAcrName": {
       "defaultValue": "eesdev2",
       "type": "string"
     }
@@ -216,7 +216,7 @@
     {
       "type": "Microsoft.ContainerRegistry/registries",
       "apiVersion": "2022-02-01-preview",
-      "name": "[parameters('registries_eesdev2_name')]",
+      "name": "[parameters('eesAcrName')]",
       "location": "uksouth",
       "sku": {
         "name": "Standard",
@@ -260,9 +260,9 @@
     {
       "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
       "apiVersion": "2022-02-01-preview",
-      "name": "[concat(parameters('registries_eesdev2_name'), '/_repositories_admin')]",
+      "name": "[concat(parameters('eesAcrName'), '/_repositories_admin')]",
       "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_eesdev2_name'))]"
+        "[resourceId('Microsoft.ContainerRegistry/registries', parameters('eesAcrName'))]"
       ],
       "properties": {
         "description": "Can perform all read, write and delete operations on the registry",
@@ -278,9 +278,9 @@
     {
       "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
       "apiVersion": "2022-02-01-preview",
-      "name": "[concat(parameters('registries_eesdev2_name'), '/_repositories_pull')]",
+      "name": "[concat(parameters('eesAcrName'), '/_repositories_pull')]",
       "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_eesdev2_name'))]"
+        "[resourceId('Microsoft.ContainerRegistry/registries', parameters('eesAcrName'))]"
       ],
       "properties": {
         "description": "Can pull any repository of the registry",
@@ -290,9 +290,9 @@
     {
       "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
       "apiVersion": "2022-02-01-preview",
-      "name": "[concat(parameters('registries_eesdev2_name'), '/_repositories_push')]",
+      "name": "[concat(parameters('eesAcrName'), '/_repositories_push')]",
       "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_eesdev2_name'))]"
+        "[resourceId('Microsoft.ContainerRegistry/registries', parameters('eesAcrName'))]"
       ],
       "properties": {
         "description": "Can push to any repository of the registry",
