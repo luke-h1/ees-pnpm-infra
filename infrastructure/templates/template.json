@@ -108,7 +108,7 @@
         "httpsOnly": true,
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanPortalName'))]",
         "siteConfig": {
-          "acrUseManagedIdentityCreds": false,
+          "acrUseManagedIdentityCreds": true,
           "alwaysOn": true,
           "minTlsVersion": "1.2",
           "ftpsState": "FtpsOnly",
@@ -158,7 +158,7 @@
         "tier": "Standard"
       },
       "properties": {
-        "adminUserEnabled": true,
+        "adminUserEnabled": false,
         "policies": {
           "quarantinePolicy": {
             "status": "disabled"
