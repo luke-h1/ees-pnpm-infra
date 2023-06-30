@@ -104,8 +104,8 @@
         "credentials": {
           "passwords": [
             {
-              "creationTime": "1688133729",
-              "name": "push-token"
+              "creationTime": "2023-06-30T09:31:00Z",
+              "name": "password1"
             }
           ]
         },
@@ -121,8 +121,8 @@
         "credentials": {
           "passwords": [
             {
-              "creationTime": "1688133729",
-              "name": "pull-token"
+              "creationTime": "2023-06-30T09:31:00Z",
+              "name": "password2"
             }
           ]
         },
