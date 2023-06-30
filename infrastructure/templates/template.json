@@ -104,7 +104,7 @@
         "credentials": {
           "passwords": [
             {
-              "creationTime": "1688133729", // Fri Jun 30 2023 14:02:09 GMT+0000
+              "creationTime": "1688133729",
               "name": "push-token"
             }
           ]
@@ -121,7 +121,7 @@
         "credentials": {
           "passwords": [
             {
-              "creationTime": "1688133729", // Fri Jun 30 2023 14:02:09 GMT+0000
+              "creationTime": "1688133729",
               "name": "pull-token"
             }
           ]
