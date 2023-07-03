@@ -142,7 +142,7 @@
           "ftpsState": "FtpsOnly",
           "nodeVersion": "16-lts",
           "WEBSITES_PORT": 3000,
-          "DOCKER_REGISTRY_SERVER_URL": "[parameters('DOCKER_REGISTER_SERVER_URL')]",
+          "DOCKER_REGISTRY_SERVER_URL": "[parameters('DOCKER_REGISTRY_SERVER_URL')]",
           "DOCKER_REGISTRY_SERVER_USERNAME": "[parameters('DOCKER_REGISTRY_SERVER_USERNAME')]",
           "DOCKER_REGISTRY_SERVER_PASSWORD": "[parameters('DOCKER_REGISTRY_SERVER_PASSWORD')]",
           "WEBSITES_ENABLE_APP_SERVICE_STORAGE": true
