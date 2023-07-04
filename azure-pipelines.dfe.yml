@@ -54,4 +54,5 @@ jobs:
           command: 'buildAndPush'
           Dockerfile: 'docker/Dockerfile.public-frontend'
           buildContext: '$(System.DefaultWorkingDirectory)'
-          tags: $(Build.BuildNumber)
+          # tags: $(Build.BuildNumber)
+          tags: latest
