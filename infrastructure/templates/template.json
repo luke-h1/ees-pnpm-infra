@@ -52,9 +52,13 @@
         "description": "The SKU of App Service Plan."
       }
     },
+    "eesAcrName": {
+      "defaultValue": "eesdev2",
+      "type": "string"
+    },
     "DOCKER_REGISTRY_SERVER_URL": {
       "type": "string",
-      "defaultValue": "",
+      "defaultValue": "https://[parameters('eesacrName')].azurecr.io",
       "metadata": {
         "description": "The URL of the Docker registry."
       }
@@ -72,44 +76,12 @@
       "metadata": {
         "description": "The password to log in to the Docker registry."
       }
-    },
-    "eesAcrName": {
-      "defaultValue": "eesdev2",
-      "type": "string"
     }
   },
   "variables": {
     "appServicePlanPortalName": "[format('AppServicePlan-{0}', parameters('webAppName'))]"
   },
   "resources": [
-    // {
-    //   "type": "Microsoft.Resources/deployments",
-    //   "apiVersion": "2020-10-01",
-    //   "name": "acrPUll_Permission",
-    //   "resourceGroup": "dfe-development",
-    //   "properties": {
-    //     "mode": "Incremental",
-    //     "parameters": {},
-    //     "template": {
-    //       "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    //       "contentVersion": "1.0.0.0",
-    //       "metadata": {},
-    //       "parameters": {},
-    //       "resources": [
-    //         {
-    //           "type": "Microsoft.Authorization/roleAssignments",
-    //           "apiVersion": "2020-04-01-preview",
-    //           "name": "[guid(concat('Microsoft.Web/sites/', parameters('webAppName')))]",
-    //           "properties": {
-    //             "roleDefinitionId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', '7f951dda-4ed3-4680-a7ca-43fe172d538d')]",
-    //             "principalId": "[reference(resourceId('Microsoft.Web/sites', parameters('webAppName')),'2019-08-01', 'full').identity.principalId]",
-    //             "principalType": "ServicePrincipal"
-    //           }
-    //         }
-    //       ]
-    //     }
-    //   }
-    // },
     {
       "type": "Microsoft.Web/serverfarms",
       "apiVersion": "2021-02-01",
